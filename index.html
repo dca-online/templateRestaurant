@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Restaurant Aethera">
+    <title>Aethera</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__logo">
+                <a href="index.html">Aethera</a>
+            </div>
+            <nav class="header__nav">
+                <ul class="nav-menu">
+                    <li class="nav-menu__item"><a href="#home" class="nav-menu__link">Acasa</a></li>
+                    <li class="nav-menu__item"><a href="#about" class="nav-menu__link">Despre Noi</a></li>
+                    <li class="nav-menu__item"><a href="#articles" class="nav-menu__link">Articole</a></li>
+                    <li class="nav-menu__item"><a href="#contact" class="nav-menu__link">Contact</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero__slider">
+                <div class="hero__slide active" style="background-image: url('assets/img/pexels-photo-262978.webp');">
+                    <div class="hero__overlay"></div>
+                    <div class="hero__content">
+                        <h1 class="hero__title">Descopera placerea gustului.</h1>
+                        <p class="hero__subtitle">Arta de a crea o experienta, nu doar o farfurie.</p>
+                        <a href="#articles" class="btn btn--primary">Vezi mai mult</a>
+                    </div>
+                </div>
+                    <div class="hero__slide" style="background-image: url('assets/img/pexels-photo-1267320.jpeg');">
+                        <div class="hero__overlay"></div>
+                    <div class="hero__content">
+                        <h1 class="hero__title">Descopera-ti pacea.</h1>
+                        <p class="hero__subtitle">Prin simplitate si filozofia ca "mai putin este mai mult".</p>
+                        <a href="#articles" class="btn btn--primary">Vezi mai mult</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__nav">
+                <button class="hero__prev" aria-label="Previous Slide">&lt;</button>
+                <button class="hero__next" aria-label="Next Slide">&gt;</button>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">Despre Aethera</h2>
+                <div class="about__content">
+                    <div class="about__text">
+                        <p>Aethera se dedica in procesul fiecarui client de a descoperi secretele gustului si de a angaja oamenii in calatoria catre un nou nivel de experienta culinara.</p>
+                    </div>
+                    <div class="about__image">
+                        <img src="assets/img/pexels-photo-1058277.jpeg" alt="About Aethera" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="articles" class="articles">
+            <div class="container">
+                <h2 class="section-title">Articole</h2>
+                <div class="articles__grid">
+                    <article class="article">
+                        <div class="article__image">
+                            <img src="assets/img/photo-1414235077428-338989a2e8c0.jpg" alt="Restaurant Dish 1" loading="lazy">
+                        </div>
+                        <div class="article__content">
+                            <h3 class="article__title">Mentalitatea noastra</h3>
+                            <p class="article__excerpt">Exploreaza modurile in care te ajutam sa aduci calm in rutina ta zilnica.</p>
+                            <a href="#" class="article__read-more">Vezi mai mult</a>
+                        </div>
+                    </article>
+                    <article class="article">
+                        <div class="article__image">
+                            <img src="assets/img/pexels-photo-761854.webp" alt="Restaurant Interior" loading="lazy">
+                        </div>
+                        <div class="article__content">
+                            <h3 class="article__title">Arta servitului lent</h3>
+                            <p class="article__excerpt">Descopera filozofia slow-dining-ului si cum poate fi aplicata in viata ta.</p>
+                            <a href="#" class="article__read-more">Vezi mai mult</a>
+                        </div>
+                    </article>
+                    <article class="article">
+                        <div class="article__image">
+                            <img src="assets/img/pexels-elletakesphotos-2696064.jpg" alt="Restaurant Food Presentation" loading="lazy">
+                        </div>
+                        <div class="article__content">
+                            <h3 class="article__title">Trai sustenabil</h3>
+                            <p class="article__excerpt">Descopera cum ne dorim sa continuam traditiile culinare in viata noastra, pastrand un echilibru intre om si natura.</p>
+                            <a href="#" class="article__read-more">Vezi mai mult</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <div class="container">
+                <h2 class="section-title">Inscrie-te pentru a afla ultimele noutati</h2>
+                <p>Aflati ultimele noutati si filozofia slow-dining-ului.</p>
+                <form class="newsletter__form">
+                    <input type="email" placeholder="Introdu email-ul tau" required>
+                    <button type="submit" class="btn btn--secondary">Aboneaza-te</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Contacteaza-ne</h2>
+                <div class="contact__details">
+                    <p>Email: info@email.com</p>
+                    <p>Telefon: +12334567890</p>
+                    <p>Adresa: 123 Strada ABC</p>
+                </div>
+                <div class="contact__form-wrapper">
+                    <form class="contact__form">
+                        <input type="text" placeholder="Nume" required>
+                        <input type="email" placeholder="Email" required>
+                        <textarea placeholder="Mesajul tau" required></textarea>
+                        <button type="submit" class="btn btn--primary">Trimite</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer__logo">
+                <a href="index.html">Aethera</a>
+            </div>
+            <div class="footer__social">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="footer__credits">
+                <p>&copy; 2025 Aethera. Toate drepturile rezervate.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/script.js"></script>
+</body>
+</html> 
