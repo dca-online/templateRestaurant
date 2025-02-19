@@ -1,0 +1,21 @@
+document.addEventListener('DOMContentLoaded',()=>{const navToggle=document.querySelector('.nav-toggle');const navMenu=document.querySelector('.nav-menu');navToggle.addEventListener('click',()=>{navMenu.classList.toggle('nav-active')});document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click',(e)=>{e.preventDefault();const targetEl=document.querySelector(anchor.getAttribute('href'));if(targetEl){targetEl.scrollIntoView({behavior:'smooth'})}
+navMenu.classList.remove('nav-active')})});const slides=document.querySelectorAll('.hero__slide');const prevBtn=document.querySelector('.hero__prev');const nextBtn=document.querySelector('.hero__next');let currentSlide=0;const totalSlides=slides.length;const showSlide=(index)=>{slides.forEach((slide,i)=>{slide.classList.toggle('active',i===index)})};nextBtn.addEventListener('click',()=>{currentSlide=(currentSlide+1)%totalSlides;showSlide(currentSlide)});prevBtn.addEventListener('click',()=>{currentSlide=(currentSlide-1+totalSlides)%totalSlides;showSlide(currentSlide)});setInterval(()=>{currentSlide=(currentSlide+1)%totalSlides;showSlide(currentSlide)},5000);if('loading' in HTMLImageElement.prototype){console.log('Native lazy loading supported.')}else{const lazyScript=document.createElement('script');lazyScript.src='https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';document.body.appendChild(lazyScript)}
+const newsletterForm=document.querySelector('.newsletter__form');if(newsletterForm){newsletterForm.addEventListener('submit',(e)=>{e.preventDefault();alert('Thanks for subscribing!');newsletterForm.reset()})}
+const contactForm=document.querySelector('.contact__form');if(contactForm){contactForm.addEventListener('submit',(e)=>{e.preventDefault();alert('Your message has been sent!');contactForm.reset()})}
+const header=document.querySelector('.header');let lastScroll=0;window.addEventListener('scroll',()=>{const currentScroll=window.pageYOffset;if(currentScroll<=0){header.classList.remove('scroll-up');return}
+if(currentScroll>lastScroll&&!header.classList.contains('scroll-down')){header.classList.remove('scroll-up');header.classList.add('scroll-down')}else if(currentScroll<lastScroll&&header.classList.contains('scroll-down')){header.classList.remove('scroll-down');header.classList.add('scroll-up')}
+lastScroll=currentScroll});const nav=document.querySelector('.nav');const navToggleMobile=document.querySelector('.nav__toggle');navToggleMobile.addEventListener('click',()=>{nav.classList.toggle('active')});const filterButtons=document.querySelectorAll('.menu__filter');const menuItems=document.querySelectorAll('.menu__item');filterButtons.forEach(button=>{button.addEventListener('click',()=>{filterButtons.forEach(btn=>btn.classList.remove('active'));button.classList.add('active');const filter=button.getAttribute('data-filter');menuItems.forEach(item=>{if(filter==='all'||item.getAttribute('data-category')===filter){item.style.display='block'}else{item.style.display='none'}})})});const carousel=document.querySelector('.testimonials__carousel');if(carousel){setInterval(()=>{carousel.scrollBy({left:carousel.clientWidth,behavior:'smooth'});if(carousel.scrollLeft+carousel.clientWidth>=carousel.scrollWidth){carousel.scrollTo({left:0,behavior:'smooth'})}},4000)}
+const galleryImages=document.querySelectorAll('.gallery__item img');galleryImages.forEach(img=>{img.addEventListener('click',()=>{const overlay=document.createElement('div');overlay.className='lightbox-overlay';overlay.style.cssText=`
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background: rgba(0,0,0,0.8);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 2000;
+            `;const enlargedImg=document.createElement('img');enlargedImg.src=img.src;enlargedImg.alt=img.alt;enlargedImg.style.cssText=`
+                max-width: 90%;
+                max-height: 90%;
+                border: 4px solid ${'#fff'};
+                border-radius: 8px;
+            `;overlay.appendChild(enlargedImg);document.body.appendChild(overlay);overlay.addEventListener('click',()=>{document.body.removeChild(overlay)})})})})
